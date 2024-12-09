@@ -36,7 +36,7 @@ function Landing2() {
         {/* Action Buttons */}
         <div className="mt-8 flex flex-col sm:flex-row justify-center gap-6 sm:gap-8">
           <Link
-            to="/register" // Replace with your Registration page path
+            to="/registration" // Replace with your Registration page path
             className="flex items-center justify-center gap-3 bg-blue-600 text-white px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-lg text-lg font-semibold shadow-md hover:bg-blue-700 hover:shadow-xl transition duration-300"
           >
             <FaUserPlus className="text-2xl sm:text-3xl md:text-4xl" />
