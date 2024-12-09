@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+*{
+  scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+@media print {
+  .bg-gradient-to-r {
+    background: none;
+  }
+  .bg-white {
+    background-color: white;
+  }
+  .text-blue-600, .text-red-600 {
+    color: black;
+  }
+  /* Hide buttons and modal during print */
+  .bg-white {
+    display: none;
+  }
+}
