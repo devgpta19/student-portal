@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"; // For routing (optional)
 
 function LandingPage() {
   return (
-    <div className="bg-gradient-to-r from-blue-100 via-white to-blue-200 h-screen w-screen flex flex-col items-center justify-center font-sans px-6 sm:px-8 md:px-10 overflow-hidden">
+    <div className="bg-gradient-to-r from-blue-100 via-white to-blue-200 h-screen w-screen flex flex-col items-center justify-center font-sans px-6 sm:px-8 py-6 md:px-10 overflow-hidden">
       {/* Header Section */}
       <header className="text-center mb-12 sm:mb-16 md:mb-20 px-4">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-blue-900 drop-shadow-md leading-tight">
