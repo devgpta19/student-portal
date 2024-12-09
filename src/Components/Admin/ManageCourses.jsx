@@ -203,7 +203,7 @@ function ManageCourses() {
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Available Courses</h2>
         <div className="space-y-4">
           {courses.map((course) => (
-            <div key={course.id} className="bg-white p-6 rounded-lg shadow-lg flex justify-between items-center">
+            <div key={course.id} className="bg-white p-6 rounded-lg shadow-lg flex flex-col lg:flex-row gap-4 lg:gap-0 justify-between items-center">
               <div>
                 <h3 className="text-xl font-semibold text-gray-800">{course.name}</h3>
                 <p className="text-gray-600">Code: {course.code}</p>

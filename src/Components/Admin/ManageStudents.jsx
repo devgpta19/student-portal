@@ -233,7 +233,7 @@ function ManageStudents() {
           {filteredStudents.map((student) => (
             <div
               key={student.id}
-              className="bg-white p-6 rounded-lg shadow-lg flex justify-between items-center"
+              className="bg-white p-6 rounded-lg shadow-lg flex flex-col lg:flex-row justify-between gap-3 lg:gap-0 items-center"
             >
               <div>
                 <h3 className="text-xl font-semibold text-gray-800">{student.name}</h3>
