@@ -22,12 +22,16 @@ function EnrolledCourses() {
 
   return (
     <div className="bg-gradient-to-r from-blue-200 via-white to-blue-300 min-h-screen font-sans">
-      {/* Header */}
+      {/* Header Section */}
       <div className="bg-white shadow-md p-4 flex justify-between items-center">
         <a href="/student-portal" className="text-blue-600 font-semibold">Back</a>
-        <div className="flex items-center space-x-4">
-          <img src="https://via.placeholder.com/50" alt="Institution Logo" className="w-12 h-12 rounded-full" />
-          <h1 className="text-2xl font-bold text-gray-800">Navyug College</h1>
+        <div className="flex items-center gap-1">
+          <img
+            src="https://via.placeholder.com/50"
+            alt="Institution Logo"
+            className="w-10 h-10 rounded-full"
+          />
+          <h1 className="text-lg font-bold text-gray-800">Navyug College</h1>
         </div>
         <a href="/student-login-signup" className="text-red-600 font-semibold">Logout</a>
       </div>

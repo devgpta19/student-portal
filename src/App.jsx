@@ -12,6 +12,7 @@ import Landing2 from './Components/Landing2';
 import ProfilePage from './Components/Student/ProfilePage';
 import Receipt from './Components/Student/Receipt';
 import EventsPage from './Components/Student/Events';
+
 import AdminPortal from './Components/Admin/AdminPortal';
 import ManageStudents from './Components/Admin/ManageStudents';
 import AddStudent from './Components/Admin/AddStudent';

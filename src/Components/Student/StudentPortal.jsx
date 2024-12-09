@@ -19,7 +19,7 @@ function StudentPortal() {
         <div className="bg-gradient-to-r from-blue-300 via-white to-blue-200 min-h-screen font-sans">
             {/* Header */}
             <div className="flex justify-between items-center p-6 bg-white shadow-xl rounded-b-xl">
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center gap-1">
                     <img src="https://via.placeholder.com/50" alt="Institution Logo" className="w-12 h-12 rounded-full" />
                     <h1 className="text-2xl font-bold text-gray-800">Navyug College</h1>
                 </div>
