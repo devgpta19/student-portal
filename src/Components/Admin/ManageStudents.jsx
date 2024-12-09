@@ -1,28 +1,129 @@
 import React, { useState } from "react";
 import { FaEdit, FaTrash } from "react-icons/fa";
+import { Link } from "react-router-dom"; // Import Link component for navigation
 
 function ManageStudents() {
   const [students, setStudents] = useState([
     {
-      id: 1,
-      name: "John Doe",
-      enrollNo: "12345",
-      contact: "9876543210",
-      email: "johndoe@example.com",
-      fatherName: "Richard Doe",
-      motherName: "Sarah Doe",
-      address: "123 Main St, Springfield, IL",
-    },
-    {
-      id: 2,
-      name: "Jane Smith",
-      enrollNo: "12346",
-      contact: "9876543211",
-      email: "janesmith@example.com",
-      fatherName: "John Smith",
-      motherName: "Emily Smith",
-      address: "456 Elm St, Springfield, IL",
-    },
+        "id": 1,
+        "name": "John Doe",
+        "enrollNo": "12345",
+        "contact": "9876543210",
+        "email": "johndoe@example.com",
+        "fatherName": "Richard Doe",
+        "motherName": "Sarah Doe",
+        "address": "123 Main St, Springfield, IL",
+        "dob": "2000-04-15",
+        "course": "Computer Science"
+      },
+      {
+        "id": 2,
+        "name": "Jane Smith",
+        "enrollNo": "12346",
+        "contact": "9876543211",
+        "email": "janesmith@example.com",
+        "fatherName": "James Smith",
+        "motherName": "Linda Smith",
+        "address": "456 Oak Ave, Springfield, IL",
+        "dob": "1999-07-22",
+        "course": "Mechanical Engineering"
+      },
+      {
+        "id": 3,
+        "name": "Alex Johnson",
+        "enrollNo": "12347",
+        "contact": "9876543212",
+        "email": "alexjohnson@example.com",
+        "fatherName": "Robert Johnson",
+        "motherName": "Mary Johnson",
+        "address": "789 Pine Rd, Springfield, IL",
+        "dob": "2001-01-10",
+        "course": "Electrical Engineering"
+      },
+      {
+        "id": 4,
+        "name": "Emily Davis",
+        "enrollNo": "12348",
+        "contact": "9876543213",
+        "email": "emilydavis@example.com",
+        "fatherName": "William Davis",
+        "motherName": "Barbara Davis",
+        "address": "101 Maple St, Springfield, IL",
+        "dob": "2000-11-25",
+        "course": "Biotechnology"
+      },
+      {
+        "id": 5,
+        "name": "Michael Brown",
+        "enrollNo": "12349",
+        "contact": "9876543214",
+        "email": "michaelbrown@example.com",
+        "fatherName": "Richard Brown",
+        "motherName": "Jennifer Brown",
+        "address": "202 Cedar Ln, Springfield, IL",
+        "dob": "1999-09-05",
+        "course": "Civil Engineering"
+      },
+      {
+        "id": 6,
+        "name": "Sophia Martinez",
+        "enrollNo": "12350",
+        "contact": "9876543215",
+        "email": "sophiamartinez@example.com",
+        "fatherName": "Carlos Martinez",
+        "motherName": "Maria Martinez",
+        "address": "303 Birch Blvd, Springfield, IL",
+        "dob": "2000-02-20",
+        "course": "Architecture"
+      },
+      {
+        "id": 7,
+        "name": "William Wilson",
+        "enrollNo": "12351",
+        "contact": "9876543216",
+        "email": "williamwilson@example.com",
+        "fatherName": "David Wilson",
+        "motherName": "Nancy Wilson",
+        "address": "404 Walnut Dr, Springfield, IL",
+        "dob": "1998-10-30",
+        "course": "Mechanical Engineering"
+      },
+      {
+        "id": 8,
+        "name": "Olivia Moore",
+        "enrollNo": "12352",
+        "contact": "9876543217",
+        "email": "oliviamoore@example.com",
+        "fatherName": "Joseph Moore",
+        "motherName": "Elizabeth Moore",
+        "address": "505 Cherry Cres, Springfield, IL",
+        "dob": "2001-03-12",
+        "course": "Physics"
+      },
+      {
+        "id": 9,
+        "name": "Liam Taylor",
+        "enrollNo": "12353",
+        "contact": "9876543218",
+        "email": "liamtaylor@example.com",
+        "fatherName": "Ethan Taylor",
+        "motherName": "Amanda Taylor",
+        "address": "606 Pine Hill Rd, Springfield, IL",
+        "dob": "1999-08-04",
+        "course": "Computer Science"
+      },
+      {
+        "id": 10,
+        "name": "Ava Harris",
+        "enrollNo": "12354",
+        "contact": "9876543219",
+        "email": "avaharris@example.com",
+        "fatherName": "Christopher Harris",
+        "motherName": "Susan Harris",
+        "address": "707 Fir Ln, Springfield, IL",
+        "dob": "2000-12-18",
+        "course": "Chemical Engineering"
+      },
     // Add more students here
   ]);
 
@@ -39,6 +140,7 @@ function ManageStudents() {
   });
 
   const [showModal, setShowModal] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   // Handle input changes for student details
   const handleInputChange = (e) => {
@@ -81,6 +183,25 @@ function ManageStudents() {
     setStudents(filteredStudents);
   };
 
+  // Handle search input change
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value.toLowerCase());
+  };
+
+  // Filter students based on search query
+  const filteredStudents = students
+    .filter((student) => {
+      return (
+        student.name.toLowerCase().includes(searchQuery) ||
+        student.email.toLowerCase().includes(searchQuery) ||
+        student.enrollNo.includes(searchQuery)
+      );
+    })
+    .sort((a, b) => {
+      // Sorting students alphabetically by their name
+      return a.name.localeCompare(b.name);
+    });
+
   return (
     <div className="bg-gradient-to-r from-blue-100 via-white to-blue-200 min-h-screen p-8">
       {/* Header */}
@@ -94,11 +215,22 @@ function ManageStudents() {
         </a>
       </div>
 
+      {/* Search Bar */}
+      <div className="mt-8 flex justify-center mb-4">
+        <input
+          type="text"
+          placeholder="Search by Name, Email, or Enrollment No."
+          value={searchQuery}
+          onChange={handleSearchChange}
+          className="p-3 w-1/3 border rounded-lg shadow-md focus:outline-none"
+        />
+      </div>
+
       {/* Student List */}
       <div className="mt-8">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">All Students</h2>
         <div className="space-y-4">
-          {students.map((student) => (
+          {filteredStudents.map((student) => (
             <div
               key={student.id}
               className="bg-white p-6 rounded-lg shadow-lg flex justify-between items-center"
@@ -129,6 +261,17 @@ function ManageStudents() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Add Student Button */}
+      <div className="mt-8 flex justify-center">
+        <Link to="/add-student">
+          <button
+            className="bg-blue-600 text-white py-2 px-8 rounded-lg shadow-md hover:bg-blue-800 transition-all"
+          >
+            Add Student
+          </button>
+        </Link>
       </div>
 
       {/* Edit/Add Student Form */}
