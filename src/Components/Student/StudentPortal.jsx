@@ -29,7 +29,7 @@ function StudentPortal() {
             <div className="container mx-auto p-8 md:p-12">
                 {/* Student Information Section */}
                 <div className="flex justify-center mb-12">
-                    <div className="flex items-center bg-white shadow-2xl rounded-lg p-8 w-full md:w-2/3">
+                    <div className="flex items-center flex-col lg:flex-row gap-4 bg-white shadow-2xl rounded-lg p-8 w-full md:w-2/3">
                         <img
                             src={studentData.photo || 'https://via.placeholder.com/150'}
                             alt="Student Profile"

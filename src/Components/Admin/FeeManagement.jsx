@@ -243,7 +243,7 @@ function FeeManagement() {
       </div>
 
       {/* Search and Filter Bar */}
-      <div className="mt-8 flex lg:gap-4 gap-1 -mx-2">
+      <div className="mt-8 flex lg:flex-row flex-col gap-4 -mx-2">
         <input
           type="text"
           placeholder="Search by Name, Email, or Enrollment No."
@@ -272,7 +272,7 @@ function FeeManagement() {
             {filteredFees.map((fee) => (
               <div
                 key={fee.id}
-                className="bg-white p-6 rounded-lg shadow-lg flex justify-between items-center"
+                className="bg-white p-6 rounded-lg shadow-lg flex justify-between items-center flex-col lg:flex-row lg:gap-0 gap-4"
               >
                 <div>
                   <h3 className="text-xl font-semibold text-gray-800">
@@ -309,7 +309,7 @@ function FeeManagement() {
                 </div>
                 <button
                   onClick={() => alert(`Printing receipt for ${fee.name}`)}
-                  className="text-blue-600 hover:text-blue-800"
+                  className="bg-slate-200 hover:bg-blue-800 rounded-md p-2 text-blue-800 hover:text-slate-200"
                 >
                   Print Receipt
                 </button>
