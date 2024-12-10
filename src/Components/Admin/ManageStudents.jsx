@@ -1,130 +1,150 @@
-import React, { useState } from "react";
+import React, { useState } from "react"; 
 import { FaEdit, FaTrash } from "react-icons/fa";
 import { Link } from "react-router-dom"; // Import Link component for navigation
 
 function ManageStudents() {
   const [students, setStudents] = useState([
     {
-        "id": 1,
-        "name": "John Doe",
-        "enrollNo": "12345",
-        "contact": "9876543210",
-        "email": "johndoe@example.com",
-        "fatherName": "Richard Doe",
-        "motherName": "Sarah Doe",
-        "address": "123 Main St, Springfield, IL",
-        "dob": "2000-04-15",
-        "course": "Computer Science"
-      },
-      {
-        "id": 2,
-        "name": "Jane Smith",
-        "enrollNo": "12346",
-        "contact": "9876543211",
-        "email": "janesmith@example.com",
-        "fatherName": "James Smith",
-        "motherName": "Linda Smith",
-        "address": "456 Oak Ave, Springfield, IL",
-        "dob": "1999-07-22",
-        "course": "Mechanical Engineering"
-      },
-      {
-        "id": 3,
-        "name": "Alex Johnson",
-        "enrollNo": "12347",
-        "contact": "9876543212",
-        "email": "alexjohnson@example.com",
-        "fatherName": "Robert Johnson",
-        "motherName": "Mary Johnson",
-        "address": "789 Pine Rd, Springfield, IL",
-        "dob": "2001-01-10",
-        "course": "Electrical Engineering"
-      },
-      {
-        "id": 4,
-        "name": "Emily Davis",
-        "enrollNo": "12348",
-        "contact": "9876543213",
-        "email": "emilydavis@example.com",
-        "fatherName": "William Davis",
-        "motherName": "Barbara Davis",
-        "address": "101 Maple St, Springfield, IL",
-        "dob": "2000-11-25",
-        "course": "Biotechnology"
-      },
-      {
-        "id": 5,
-        "name": "Michael Brown",
-        "enrollNo": "12349",
-        "contact": "9876543214",
-        "email": "michaelbrown@example.com",
-        "fatherName": "Richard Brown",
-        "motherName": "Jennifer Brown",
-        "address": "202 Cedar Ln, Springfield, IL",
-        "dob": "1999-09-05",
-        "course": "Civil Engineering"
-      },
-      {
-        "id": 6,
-        "name": "Sophia Martinez",
-        "enrollNo": "12350",
-        "contact": "9876543215",
-        "email": "sophiamartinez@example.com",
-        "fatherName": "Carlos Martinez",
-        "motherName": "Maria Martinez",
-        "address": "303 Birch Blvd, Springfield, IL",
-        "dob": "2000-02-20",
-        "course": "Architecture"
-      },
-      {
-        "id": 7,
-        "name": "William Wilson",
-        "enrollNo": "12351",
-        "contact": "9876543216",
-        "email": "williamwilson@example.com",
-        "fatherName": "David Wilson",
-        "motherName": "Nancy Wilson",
-        "address": "404 Walnut Dr, Springfield, IL",
-        "dob": "1998-10-30",
-        "course": "Mechanical Engineering"
-      },
-      {
-        "id": 8,
-        "name": "Olivia Moore",
-        "enrollNo": "12352",
-        "contact": "9876543217",
-        "email": "oliviamoore@example.com",
-        "fatherName": "Joseph Moore",
-        "motherName": "Elizabeth Moore",
-        "address": "505 Cherry Cres, Springfield, IL",
-        "dob": "2001-03-12",
-        "course": "Physics"
-      },
-      {
-        "id": 9,
-        "name": "Liam Taylor",
-        "enrollNo": "12353",
-        "contact": "9876543218",
-        "email": "liamtaylor@example.com",
-        "fatherName": "Ethan Taylor",
-        "motherName": "Amanda Taylor",
-        "address": "606 Pine Hill Rd, Springfield, IL",
-        "dob": "1999-08-04",
-        "course": "Computer Science"
-      },
-      {
-        "id": 10,
-        "name": "Ava Harris",
-        "enrollNo": "12354",
-        "contact": "9876543219",
-        "email": "avaharris@example.com",
-        "fatherName": "Christopher Harris",
-        "motherName": "Susan Harris",
-        "address": "707 Fir Ln, Springfield, IL",
-        "dob": "2000-12-18",
-        "course": "Chemical Engineering"
-      },
-    // Add more students here
+      "id": 1,
+      "name": "John Doe",
+      "enrollNo": "12345",
+      "contact": "9876543210",
+      "email": "johndoe@example.com",
+      "fatherName": "Richard Doe",
+      "motherName": "Sarah Doe",
+      "address": "123 Main St, Springfield, IL",
+      "dob": "2000-04-15",
+      "course": "Computer Science",
+      "semester": "Semester 1",
+      "result": "8.8"
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "enrollNo": "12346",
+      "contact": "9876543211",
+      "email": "janesmith@example.com",
+      "fatherName": "Michael Smith",
+      "motherName": "Laura Smith",
+      "address": "456 Oak St, Chicago, IL",
+      "dob": "1999-02-22",
+      "course": "Mathematics",
+      "semester": "Semester 2",
+      "result": "7.3"
+    },
+    {
+      "id": 3,
+      "name": "Alice Johnson",
+      "enrollNo": "12347",
+      "contact": "9876543212",
+      "email": "alicejohnson@example.com",
+      "fatherName": "David Johnson",
+      "motherName": "Emily Johnson",
+      "address": "789 Pine St, Aurora, IL",
+      "dob": "2001-01-10",
+      "course": "Biology",
+      "semester": "Semester 1",
+      "result": "9.02"
+    },
+    {
+      "id": 4,
+      "name": "Bob Brown",
+      "enrollNo": "12348",
+      "contact": "9876543213",
+      "email": "bobbrown@example.com",
+      "fatherName": "James Brown",
+      "motherName": "Patricia Brown",
+      "address": "101 Maple St, Naperville, IL",
+      "dob": "2000-07-23",
+      "course": "Physics",
+      "semester": "Semester 3",
+      "result": "8.1"
+    },
+    {
+      "id": 5,
+      "name": "Charlie Davis",
+      "enrollNo": "12349",
+      "contact": "9876543214",
+      "email": "charliedavis@example.com",
+      "fatherName": "William Davis",
+      "motherName": "Jennifer Davis",
+      "address": "202 Birch St, Evanston, IL",
+      "dob": "1999-12-05",
+      "course": "Chemistry",
+      "semester": "Semester 4",
+      "result": "8.6"
+    },
+    {
+      "id": 6,
+      "name": "Diana Harris",
+      "enrollNo": "12350",
+      "contact": "9876543215",
+      "email": "dianaharris@example.com",
+      "fatherName": "Robert Harris",
+      "motherName": "Nancy Harris",
+      "address": "303 Cedar St, Bloomington, IL",
+      "dob": "2001-09-17",
+      "course": "Economics",
+      "semester": "Semester 2",
+      "result": "7.9"
+    },
+    {
+      "id": 7,
+      "name": "Eve Clark",
+      "enrollNo": "12351",
+      "contact": "9876543216",
+      "email": "eveclark@example.com",
+      "fatherName": "Richard Clark",
+      "motherName": "Elizabeth Clark",
+      "address": "404 Elm St, Peoria, IL",
+      "dob": "2000-11-30",
+      "course": "Psychology",
+      "semester": "Semester 1",
+      "result": "8.9"
+    },
+    {
+      "id": 8,
+      "name": "Frank Lewis",
+      "enrollNo": "12352",
+      "contact": "9876543217",
+      "email": "franklewis@example.com",
+      "fatherName": "Thomas Lewis",
+      "motherName": "Sandra Lewis",
+      "address": "505 Willow St, Champaign, IL",
+      "dob": "2000-05-15",
+      "course": "Engineering",
+      "semester": "Semester 3",
+      "result": "9.6"
+    },
+    {
+      "id": 9,
+      "name": "Grace Martin",
+      "enrollNo": "12353",
+      "contact": "9876543218",
+      "email": "gracemartin@example.com",
+      "fatherName": "John Martin",
+      "motherName": "Helen Martin",
+      "address": "606 Ash St, Urbana, IL",
+      "dob": "1999-08-22",
+      "course": "Literature",
+      "semester": "Semester 4",
+      "result": "9.1"
+    },
+    {
+      "id": 10,
+      "name": "Henry White",
+      "enrollNo": "12354",
+      "contact": "9876543219",
+      "email": "henrywhite@example.com",
+      "fatherName": "Charles White",
+      "motherName": "Marie White",
+      "address": "707 Pine St, Decatur, IL",
+      "dob": "2001-03-12",
+      "course": "History",
+      "semester": "Semester 2",
+      "result": "6.3"
+    },
+    // More student data can go here
   ]);
 
   const [editing, setEditing] = useState(false);
@@ -137,6 +157,8 @@ function ManageStudents() {
     fatherName: "",
     motherName: "",
     address: "",
+    semester: "",
+    result: ""
   });
 
   const [showModal, setShowModal] = useState(false);
@@ -160,6 +182,12 @@ function ManageStudents() {
   // Save edited student details
   const saveStudent = (e) => {
     e.preventDefault();
+    // If result is entered, check if semester is selected
+    if (newStudent.result && !newStudent.semester) {
+      alert("Please select a semester first.");
+      return;
+    }
+
     const updatedStudents = students.map((student) =>
       student.id === editStudentId ? newStudent : student
     );
@@ -172,6 +200,8 @@ function ManageStudents() {
       fatherName: "",
       motherName: "",
       address: "",
+      semester: "",
+      result: ""
     });
     setEditing(false);
     setShowModal(false);
@@ -243,6 +273,13 @@ function ManageStudents() {
                 <p className="text-gray-600">Father's Name: {student.fatherName}</p>
                 <p className="text-gray-600">Mother's Name: {student.motherName}</p>
                 <p className="text-gray-600">Address: {student.address}</p>
+                {/* Display Semester and Result */}
+                {student.semester && student.result && (
+                  <div className="mt-4 text-gray-600">
+                    <p>Semester: {student.semester}</p>
+                    <p>Result: {student.result}</p>
+                  </div>
+                )}
               </div>
               <div className="flex space-x-4">
                 <button
@@ -277,7 +314,7 @@ function ManageStudents() {
       {/* Edit/Add Student Form */}
       {showModal && (
         <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50 z-10">
-          <div className="bg-white p-6 rounded-lg shadow-lg w-96">
+          <div className="bg-white p-6 rounded-lg shadow-lg w-96 max-h-[90vh] overflow-y-auto">
             <h3 className="text-2xl font-semibold text-gray-800 mb-4">
               {editing ? "Edit Student" : "Add New Student"}
             </h3>
@@ -293,6 +330,7 @@ function ManageStudents() {
                   placeholder="Enter student name"
                 />
               </label>
+
               <label className="block">
                 Enrollment No:
                 <input
@@ -304,6 +342,7 @@ function ManageStudents() {
                   readOnly
                 />
               </label>
+
               <label className="block">
                 Contact:
                 <input
@@ -315,6 +354,7 @@ function ManageStudents() {
                   placeholder="Enter contact number"
                 />
               </label>
+
               <label className="block">
                 Email:
                 <input
@@ -326,6 +366,7 @@ function ManageStudents() {
                   placeholder="Enter email"
                 />
               </label>
+
               <label className="block">
                 Father's Name:
                 <input
@@ -337,6 +378,7 @@ function ManageStudents() {
                   placeholder="Enter father's name"
                 />
               </label>
+
               <label className="block">
                 Mother's Name:
                 <input
@@ -348,6 +390,7 @@ function ManageStudents() {
                   placeholder="Enter mother's name"
                 />
               </label>
+
               <label className="block">
                 Address:
                 <textarea
@@ -356,6 +399,39 @@ function ManageStudents() {
                   onChange={handleInputChange}
                   className="w-full p-2 mt-1 border rounded"
                   placeholder="Enter permanent address"
+                />
+              </label>
+
+              {/* Semester Result Section */}
+              <label className="block">
+                Select Semester:
+                <select
+                  name="semester"
+                  value={newStudent.semester}
+                  onChange={handleInputChange}
+                  className="w-full p-2 mt-1 border rounded"
+                >
+                  <option value="">Select Semester</option>
+                  <option value="Semester 1">Semester 1</option>
+                  <option value="Semester 2">Semester 2</option>
+                  <option value="Semester 3">Semester 3</option>
+                  <option value="Semester 4">Semester 4</option>
+                  <option value="Semester 5">Semester 5</option>
+                  <option value="Semester 6">Semester 6</option>
+                  <option value="Semester 7">Semester 7</option>
+                  <option value="Semester 8">Semester 8</option>
+                </select>
+              </label>
+
+              <label className="block">
+                Enter Result:
+                <input
+                  type="text"
+                  name="result"
+                  value={newStudent.result}
+                  onChange={handleInputChange}
+                  className="w-full p-2 mt-1 border rounded"
+                  placeholder="Enter result (e.g., GPA or grades)"
                 />
               </label>
 
@@ -368,6 +444,7 @@ function ManageStudents() {
                 </button>
               </div>
             </form>
+
             <button
               onClick={() => setShowModal(false)}
               className="mt-4 text-red-600 hover:text-red-800"
@@ -382,3 +459,4 @@ function ManageStudents() {
 }
 
 export default ManageStudents;
+ 

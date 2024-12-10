@@ -308,7 +308,7 @@ function FeeManagement() {
                   </p>
                 </div>
                 <button
-                  onClick={() => alert(`Printing receipt for ${fee.name}`)}
+                  onClick={() => handlePrint(fee.id)}
                   className="bg-slate-200 hover:bg-blue-800 rounded-md p-2 text-blue-800 hover:text-slate-200"
                 >
                   Print Receipt
